@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <style>
+        .cart-add {
+        /* 버튼의 위, 아래 여백 추가 */
+        margin-top: 20px;  /* 위 여백 */
+        margin-bottom: 20px;  /* 아래 여백 */
+        text-align: center; /* 버튼을 가운데 정렬 */
+        }
+
+        .cart-add .btn {
+        /* 버튼 너비 설정 */
+        width: 200px;  /* 버튼의 너비를 200px로 설정 */
+        padding: 10px;  /* 버튼 내부 여백 (상하좌우) */
+        text-align: center; /* 텍스트 가운데 정렬 */
+        }
+    </style>
+
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h2 th:text="${product.name}"></h2>
+        </div>
+        <div class="card-body">
+
+            <!-- 이미지 설명 및 이미지 사진 출력 -->
+            <img th:src="@{${product.imageUrl}}" alt="Product Image" class="img-fluid"/>
+
+            <p th:text="${product.description}"></p>
+            <p><strong>Price:</strong> <span th:text="${product.price}"></span></p>
+            <p><strong>Stock:</strong> <span th:text="${product.stockQuantity}"></span></p>
+
+            <a href="/order" class="btn btn-primary">바로 구매</a>
+
+            <a href="/products" class="btn btn-primary">Back</a>
+        </div>
+        <div class="card-footer">
+            <form th:action="@{/cart/add/{id}(id=${product.id})}" method="POST">
+                <input type="number" name="quantity" value="1" min="1" />
+                <button type="submit" class="btn btn-primary">장바구니에 추가</button>
+            </form>
+
+        </div>
+
+
+        <div class = "cart-add">
+
+            <a href="/cart" class="btn btn-primary" onclick="submitCartForm()">장바구니 보기</a>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function submitCartForm() {
+        // 폼 제출
+        document.getElementById("cartForm").submit();
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

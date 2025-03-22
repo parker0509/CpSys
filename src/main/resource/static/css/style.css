@@ -1,0 +1,207 @@
+/* 기본 스타일 */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1; /* 밝은 회색 배경 */
+    color: #333;
+}
+
+.navbar {
+    background-color: #FFFFFF; /* 흰색 */
+}
+
+.navbar-brand {
+    font-family: 'Poppins', sans-serif; /* 둥근 느낌의 글씨체 */
+    font-weight: 600; /* 적당히 두껍게 */
+    font-size: 1.5rem; /* 글씨 크기 조정 */
+    color: #333; /* 더 보기 좋은 색상 */
+}
+
+.navbar-nav .nav-link {
+    color: black !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #aaa !important; /* 회색 톤으로 변경 */
+}
+
+
+        /* Hero Section */
+.hero {
+    position: relative;
+    width: 30%;
+    height: 50px; /* 슬라이더 높이 */
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.hero .hero-images {
+    display: flex;
+    transition: transform 0.5s ease;
+    cursor: grab;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%; /* 이미지가 슬라이더 공간에 맞춰지도록 설정 */
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* 하단 점 표시 */
+.hero .dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.hero .dots .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero .dots .dot.active {
+    background-color: #FF5722;
+}
+
+/* 푸터 스타일 */
+.footer {
+    background-color: #FFFFFF; /* 다크 회색 푸터 */
+    color: black;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.footer a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+/* 상품 카드 */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 250px;
+    height: 500px;
+    margin: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* 아이템들이 왼쪽으로 정렬되어 간격이 좁아짐 */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-card .card-body {
+    padding: 10px;
+}
+
+.product-card .card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product-card .card-text {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.product-card .card-text strong {
+    font-size: 1rem;
+    color: #333;
+}
+
+.product-card .btn {
+    background-color: #777;
+    border-color: #777;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    display: none;
+}
+
+.product-card .btn:hover {
+    background-color: #666;
+    border-color: #666;
+}
+ /* 카드 컨테이너 스타일 */
+        .room-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        /* 개별 카드 스타일 */
+        .room-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .room-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .room-card img {
+            width: 100%;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .room-card-body {
+            padding: 1rem;
+        }
+
+        .room-card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .room-card-description {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .room-card-price {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 0.5rem;
+        }
